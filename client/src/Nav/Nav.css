@@ -1,0 +1,13 @@
+.Nav{
+  background-color: rgba(214, 214, 214, 0.773);
+  border-radius: 10px;
+  position: fixed;
+  z-index: 10;
+  bottom: 80px;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: space-around;
+  height: 40px;
+  font-size: 20px;
+}

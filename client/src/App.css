@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Andika', sans-serif;
+}
+body{ 
+  background-color: #DEE8D5 ;
+}
+
+.app-container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.pages{
+  position: relative;
+  height: 90%;
+  width: 80%;
+  background-color: #E9FAE3;
+  box-shadow: 0 0 1px rgba(46, 44, 44, 0.655);
+  border-radius: 6px;
+  z-index: 0;
+}
