@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './homepage.css'
-import ContactList from './ContactList'
 import axios from 'axios'
+import BookList from './BookList'
+import BookClicked from './BookClicked'
+import { BookContext } from '../../Context/Context'
 
 
 const HomaPage = () => {
+  const {bookListClicked , setBookListClicked} = useContext(BookContext)
   const [books , setBooks] = useState([])
-
+  const [selectedId , setSelectedId] = useState(null)
+  const [selectedBook , setSelectedBook] = useState({})
+  
   const GETApi = async () =>{
         await axios.get('http://localhost:4000/books').then((res)=>{
           setBooks(res.data.data)
@@ -14,10 +19,18 @@ const HomaPage = () => {
           console.error(err)
         })
   }
-  
   useEffect(()=>{
     GETApi()
   } , [] )
+
+
+    const handleClick = (id) => {
+      setBookListClicked(true)
+      setSelectedId(id)
+      const selectedBook = books.find((books) => books.id === id)
+      setSelectedBook(selectedBook)
+    }
+
   return (
     <div className='homePage'>
       <div className='left-homePage'>
@@ -25,12 +38,16 @@ const HomaPage = () => {
         <div >
         {books.map((e)=>{
           return (
-<           ContactList data={e}/>
+            <div onClick={()=>handleClick(e.id)}> 
+                <BookList data={e} key={e.id}/>
+            </div>
           )
         })}
         </div>
       </div>
-      <div className='right-homePage'>asd</div>
+      <div className='right-homePage'>
+        {bookListClicked && <BookClicked data={selectedBook}/>}
+      </div>
     </div>
   )
 }

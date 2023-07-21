@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Nav.css'
 import {LuContact} from 'react-icons/lu'
 import {FiSearch} from 'react-icons/fi'
 import {CgAddR} from 'react-icons/cg'
+import {BookContext} from '../Context/Context'
+
 
 const Nav = () => {
+  const { setBookListClicked} = useContext(BookContext)
   const [homeClick , setHomeClick] = useState(true)
   const [searchClick , setSearchClick] = useState(false)
   const [addClick , setAddClick] = useState(false)
@@ -13,6 +16,9 @@ const Nav = () => {
     a(true)
     b(false)
     c(false)
+  }
+  if (searchClick|| addClick ){
+    setBookListClicked(false)
   }
   return (
     <div className='Nav'>

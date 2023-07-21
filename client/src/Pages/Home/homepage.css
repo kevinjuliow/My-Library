@@ -21,3 +21,32 @@
 .right-homePage{
   flex: 1;
 }
+
+
+
+/*BookList*/
+.bookList{
+  color: white;
+  width: 80%;
+  background-color: rgb(79, 52, 0);
+  margin: 20px 10%;
+  height: 50px;
+  border-radius: 5px;
+  padding: 5px 10%;
+  cursor: pointer;
+  transition: .2s;
+  position: relative;
+}
+
+.bookList:hover{
+  width: 85%;
+  height: 55px;
+  margin: 15px 7%;
+}
+
+.trash:hover { 
+  color: rgb(96, 72, 72);
+}
+
+
+
