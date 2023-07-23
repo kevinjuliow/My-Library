@@ -4,12 +4,32 @@
   height: 100%;
 }
 
+/*LEFT SIDE*/
 .left-homePage {
   border-right: 1px solid rgba(0, 0, 0, 0.364);
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+.bookClicked-container{
+  margin: 10px;
+  margin-right: 20px;
+  height: 74%;
+  overflow-y: auto;
+}
+
+.bookClicked-container::-webkit-scrollbar-track {
+  background-color: #ffffff; 
+}
+.bookClicked-container::-webkit-scrollbar-thumb {
+  background-color: #1b1818;
+  border-radius: 10px; 
+  border: 1px solid #fbf9f9; 
+} 
+.bookClicked-container::-webkit-scrollbar {
+  width: 8px; 
+}
+
 .left-homePage h1{
   width: 80%;
   border-bottom: solid 1px black;
@@ -18,12 +38,16 @@
   padding-top: 10%;
   padding-bottom: 20px;
 }
+
+
+
+
+
+
+/*Right Side*/
 .right-homePage{
   flex: 1;
 }
-
-
-
 /*BookList*/
 .bookList{
   color: white;
@@ -43,6 +67,7 @@
   height: 55px;
   margin: 15px 7%;
 }
+
 
 .trash:hover { 
   color: rgb(96, 72, 72);

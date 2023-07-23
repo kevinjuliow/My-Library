@@ -35,10 +35,10 @@ const HomaPage = () => {
     <div className='homePage'>
       <div className='left-homePage'>
         <h1>My Books</h1>
-        <div >
+        <div className='bookClicked-container' >
         {books.map((e)=>{
           return (
-            <div onClick={()=>handleClick(e.id)}> 
+            <div onClick={()=>handleClick(e.id)} > 
                 <BookList data={e} key={e.id}/>
             </div>
           )
