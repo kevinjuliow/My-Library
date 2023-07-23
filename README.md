@@ -2,7 +2,7 @@
 Library app using React Framework , Express / Node Js and MySql
 
 # Getting Started 
-## Start The Client Server (React App) 
+### `Start The Client Server (React App)`
 
 <br/>
 First , Change the directory to client
@@ -18,7 +18,7 @@ npm start
 ```
 
 <br/>
-## Run The REST API 
+### `Run The REST API` 
 <br/>
 First , Change The Directory to Server
 
