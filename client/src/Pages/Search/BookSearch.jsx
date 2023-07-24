@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import './bookSearch.css'
 import SearchBar from './SearchBar'
 import { BookContext } from '../../Context/Context'
+import BookResult from './BookResults'
 
 const BookSearch = () => {
   const {searchedBooks , setSearchedBooks} = useContext(BookContext)
@@ -11,9 +12,10 @@ const BookSearch = () => {
       <SearchBar/>
 
       <div className='search-results'>
-        {searchedBooks.map((e)=>{ 
+        { 
+        searchedBooks.map((book)=>{ 
           return (
-            <p>{e.name}</p>
+            <BookResult book={book}/>
           )
         })}
       </div>

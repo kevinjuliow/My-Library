@@ -10,7 +10,7 @@ const SearchBar = () => {
   const searchApi = async (value) => {
       await axios.get('http://localhost:4000/books').then((res)=> {
        const result = res.data.data.filter((book)=>{ 
-         return book.name.toLowerCase().includes(value.toLowerCase())
+         return value && book.name.toLowerCase().includes(value.toLowerCase())
        })
        setSearchedBooks(result)
       })
@@ -24,7 +24,7 @@ const SearchBar = () => {
   return (
     <div style={{backgroundColor : "white" , width : "40%" , padding  :"1% 4%" , borderRadius: "20px" , position : 'relative'}}>
       <FiSearch/>
-      <input type="text" style={{border : 'none' , marginLeft : '5%' , fontSize : "20px" , width : "80%"}}
+      <input type="text" style={{border : 'none' , marginLeft : '5%' , fontSize : "20px" , width : "80%" , outline:"none"}}
        placeholder='Search...'
        value={searchQuery}
       onChange={(e)=>handleSearch(e)}

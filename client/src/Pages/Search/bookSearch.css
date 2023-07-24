@@ -12,8 +12,38 @@
 
 /*Search Results*/
 .search-results{ 
-  background-color: rgb(255, 255, 255);
   width: 70%;
   margin-top: 4%;
-  height: 500px
+  height: 400px
+  ;position: relative;
+  overflow-y : auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background-color: #ffffff; 
+}
+.search-results::-webkit-scrollbar-thumb {
+  background-color: #1b1818;
+  border-radius: 10px; 
+  border: 1px solid #fbf9f9; 
+} 
+.search-results::-webkit-scrollbar {
+  width: 8px; 
+}
+
+/*book Results*/
+.bookResult{
+  width: 100%;
+  background-color: rgba(79, 51, 0, 0.921);
+  height: 80px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.bookResult h1 { 
+  color: white;
+  margin-top: 10px;
 }
