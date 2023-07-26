@@ -7,7 +7,7 @@ import { BookContext } from '../../Context/Context'
 
 
 const HomaPage = () => {
-  const {bookListClicked , setBookListClicked} = useContext(BookContext)
+  const {bookListClicked , setBookListClicked , refetch , setRefetch} = useContext(BookContext)
   const [books , setBooks] = useState([])
   const [selectedId , setSelectedId] = useState(null)
   const [selectedBook , setSelectedBook] = useState({})
@@ -23,6 +23,21 @@ const HomaPage = () => {
     GETApi()
   } , [] )
 
+  const reFetchApi = async () =>{
+    await axios.get('http://localhost:4000/books').then((res)=>{
+          setBooks(res.data.data)
+        }).catch((err)=>{
+          console.error(err)
+        })
+  }
+
+  if(refetch){
+    reFetchApi()
+  }else{
+    reFetchApi()
+  }
+
+
 
     const handleClick = (id) => {
       setBookListClicked(true)
@@ -36,13 +51,21 @@ const HomaPage = () => {
       <div className='left-homePage'>
         <h1>My Books</h1>
         <div className='bookClicked-container' >
-        {books.map((e)=>{
+        { refetch ? books.map((e)=>{
           return (
             <div onClick={()=>handleClick(e.id)} > 
                 <BookList data={e} key={e.id}/>
             </div>
           )
-        })}
+        }) : 
+         books.map((e)=>{
+          return (
+            <div onClick={()=>handleClick(e.id)} > 
+                <BookList data={e} key={e.id}/>
+            </div>
+          )
+        })
+        }
         </div>
       </div>
       <div className='right-homePage'>

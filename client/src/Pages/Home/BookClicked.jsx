@@ -6,11 +6,12 @@ import axios from 'axios'
 
 const BookClicked = (props) => {
   const [isHovered , setIsHovered] = useState(false)
-  const {setBookListClicked} = useContext(BookContext)
+  const {setBookListClicked , setRefetch} = useContext(BookContext)
   const {id , name , year , author , publisher , pages} = props.data
   
   const deleteBook = () => {
     axios.delete(`http://localhost:4000/books/${id}`)
+    setRefetch(true)
   }
 
   const link = () => {
