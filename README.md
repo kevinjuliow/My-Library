@@ -1,5 +1,6 @@
 # My-Library
-Library app using React Framework , Express / Node Js and MySql
+Library app using React Framework , Express / Node Js and MySql. <br/>
+In this App , user will be able to view books , delete books , search and create a new book . 
 
 # Getting Started 
 ### `Start The Client Server (React App)`
